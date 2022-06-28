@@ -18,7 +18,7 @@ const Formulario = () => {
           telefono: Yup.number()
                       .positive('número no válido')
                       .integer('número no válido')
-                      .typeError('El teléfono debe ser un número'),
+                      .typeError('El teléfono debe ser un número')
   })
 
   const initialValues =  (valores) => {
