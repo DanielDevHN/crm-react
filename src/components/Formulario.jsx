@@ -8,7 +8,17 @@ const Formulario = () => {
       <h1 className="text-gray-600 font-bold text-xl uppercase
         text-center">Agregar Cliente</h1>
 
-      <Formik>
+      <Formik
+        initialValues={{
+          nombre: '',
+          empresa: '',
+          email: '',
+          telefono: '',
+          notas: ''
+        }}
+      >
+        {() => (
+          
         <Form
           className="mt-10"
         >
@@ -22,6 +32,7 @@ const Formulario = () => {
               type="text"
               className="mt-2 block w-full p-3 bg-gray-50"
               placeholder="Nombre del Cliente"
+              name="nombre"
             />
           </div>
 
@@ -35,6 +46,7 @@ const Formulario = () => {
               type="text"
               className="mt-2 block w-full p-3 bg-gray-50"
               placeholder="Empresa del Cliente"
+              name="empresa"
             />
           </div>
 
@@ -48,6 +60,7 @@ const Formulario = () => {
               type="email"
               className="mt-2 block w-full p-3 bg-gray-50"
               placeholder="Email del Cliente"
+              name="email"
             />
           </div>
 
@@ -61,6 +74,7 @@ const Formulario = () => {
               type="tel"
               className="mt-2 block w-full p-3 bg-gray-50"
               placeholder="Teléfono del Cliente"
+              name="telefono"
             />
           </div>
 
@@ -75,6 +89,7 @@ const Formulario = () => {
               type="text"
               className="mt-2 block w-full p-3 bg-gray-50"
               placeholder="Escriba algo sobre el Cliente"
+              name="notas"
             />
 
             <input 
@@ -86,6 +101,7 @@ const Formulario = () => {
             />
           </div>
         </Form>
+        )}
       </Formik>
     </div>
   )
