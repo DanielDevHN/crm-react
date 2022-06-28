@@ -1,12 +1,3 @@
 {
-    "clientes": [
-        {
-            "id": 1,
-            "nombre": "Daniel",
-            "empresa": "Google",
-            "telefono": "12345678",
-            "notas": "Ninguna"
-
-        }
-    ]
+    "clientes": []
 }
