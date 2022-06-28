@@ -1,7 +1,22 @@
 import React from 'react'
 import { Formik, Form, Field } from 'formik'
+import * as Yup from 'yup'
 
 const Formulario = () => {
+
+  const nuevoClienteSchema = Yup.object().shape({
+          nombre: Yup.string().required('El nombre es requerido'),
+          empresa: Yup.string().required('La empresa es requerida'),
+          email: Yup.string().email('El email es inválido').required('El email es requerido'),
+          telefono: Yup.string().required('El teléfono es requerido'),
+          notas: Yup.string()
+  })
+
+  const initialValues =  (valores) => {
+    console.log(valores)
+  }
+
+
   return (
     <div className="bg-white mt-10 px-5 py-10 rounded-md shadow-md 
     md:w-3/4 mx-auto">
@@ -15,6 +30,9 @@ const Formulario = () => {
           email: '',
           telefono: '',
           notas: ''
+        }}
+        onSubmit={(values) => {
+          handleSubmit(values)
         }}
       >
         {() => (
