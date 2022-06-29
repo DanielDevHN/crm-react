@@ -11,8 +11,8 @@ const Spinner = () => {
         <div className="sk-cube sk-cube6"></div>
         <div className="sk-cube sk-cube7"></div>
         <div className="sk-cube sk-cube8"></div>
-        <div className="sk-cName=be sk-cube9"></div>
-    </div>>
+        <div className="sk-cube sk-cube9"></div>
+    </div>
   )
 }
 

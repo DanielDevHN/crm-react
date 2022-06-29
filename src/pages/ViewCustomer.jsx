@@ -4,12 +4,11 @@ import { useParams } from 'react-router-dom'
 const ViewCustomer = () => {
 
     const [cliente, setCliente] = useState({})
-    const [cargando, setCargando] = useState(false)
+    const [cargando, setCargando] = useState(true)
 
     const { id } = useParams()
 
     useEffect(() => {
-        setCargando(!cargando)
         const obtenerClientesAPI = async () => {
             try {
                 const url = `http://localhost:4000/clientes/${id}`
@@ -20,17 +19,17 @@ const ViewCustomer = () => {
             } catch (error) {
                 console.log(error)
             }
-            setCargando(false)
+            setCargando(!cargando)
         }
         obtenerClientesAPI()
     }, [])
 
     return (
-
-        Object.keys(cliente).length === 0 ? <p>No hay Resultados</p> : (
+        cargando ? <p>Cargando...</p> : Object.keys(cliente).length === 0 ? <p>No hay Resultados</p> 
+        : (
 
             <div className="text-3xl text-gray-700">
-                {cargando ? 'Cargando...' : (
+                
                     <>
                         <h1 className="font-black text-3xl text-blue-900">Detalles del Cliente : {cliente.nombre}</h1>
                         <p className="mt-3 text-xl font-semibold">Información del Cliente</p>
@@ -62,7 +61,6 @@ const ViewCustomer = () => {
                             </p>
                         )}
                     </>
-                )}
             </div>
         )
     )
