@@ -51,15 +51,15 @@ const Formulario = ({cliente}) => {
     <div className="bg-white mt-10 px-5 py-10 rounded-md shadow-md 
     md:w-3/4 mx-auto">
       <h1 className="text-gray-600 font-bold text-xl uppercase
-        text-center">Agregar Cliente</h1>
+        text-center">{cliente?.nombre ? 'Editar Cliente' : 'Agregar Cliente'}</h1>
 
       <Formik
         initialValues={{
           nombre: cliente?.nombre ?? "",
-          empresa: '',
-          email: '',
-          telefono: '',
-          notas: ''
+          empresa: cliente?.empresa ?? "",
+          email: cliente?.email ?? "",
+          telefono: cliente?.telefono ?? "",
+          notas: cliente?.notas ?? ""
         }}
         enableReinitialize={true}
         onSubmit={async (values, { resetForm }) => {
@@ -164,7 +164,7 @@ const Formulario = ({cliente}) => {
 
                 <input
                   type="submit"
-                  value="Agregar Cliente"
+                  value={cliente?.nombre ? 'Actualizar Cliente' : 'Agregar Cliente'}
                   className="mt-5 w-full p-3 bg-blue-800 
               hover:bg-blue-700 text-white font-bold 
               uppercase rounded-md text-lg cursor-pointer"
