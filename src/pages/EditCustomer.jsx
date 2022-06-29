@@ -30,9 +30,12 @@ const EditCustomer = () => {
         <h1 className="font-black text-3xl text-blue-900">Editar Cliente</h1>
         <p className="mt-3">Utiliza este formulario para editar los datos de un cliente.</p>
 
-        <Form
-            cliente={cliente}
-        />
+        {cliente?.nombre ? (
+            <Form
+                cliente={cliente}
+                cargando={cargando}
+            />
+        ): <p>Cliente ID no válido o no existe</p>}
     </>
   )
 }
