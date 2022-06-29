@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Spinner from '../components/Spinner'
 
 const ViewCustomer = () => {
 
@@ -19,17 +20,20 @@ const ViewCustomer = () => {
             } catch (error) {
                 console.log(error)
             }
+   
             setCargando(!cargando)
         }
         obtenerClientesAPI()
     }, [])
 
     return (
-        cargando ? <p>Cargando...</p> : Object.keys(cliente).length === 0 ? <p>No hay Resultados</p> 
-        : (
+        cargando ? <Spinner /> : 
+            Object.keys(cliente).length === 0 ? 
+            <p>No hay Resultados</p>: 
+            (
 
-            <div className="text-3xl text-gray-700">
-                
+                <div className="text-3xl text-gray-700">
+
                     <>
                         <h1 className="font-black text-3xl text-blue-900">Detalles del Cliente : {cliente.nombre}</h1>
                         <p className="mt-3 text-xl font-semibold">Información del Cliente</p>
@@ -61,9 +65,9 @@ const ViewCustomer = () => {
                             </p>
                         )}
                     </>
-            </div>
+                </div>
+            )
         )
-    )
-}
+    }
 
 export default ViewCustomer
