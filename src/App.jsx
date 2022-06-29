@@ -4,6 +4,7 @@ import Layout from './layout/Layout'
 import Home from './pages/Home'
 import NewCustomer from './pages/NewCustomer'
 import EditCustomer from './pages/EditCustomer'
+import ViewCustomer from './pages/ViewCustomer'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
                 <Route index element={<Home/>} />
                 <Route path="nuevo" element={<NewCustomer/>} />
                 <Route path="editar/:id" element={<EditCustomer/>} />
+                <Route path=":id" element={<ViewCustomer/>} />
             </Route>
         </Routes>
       </BrowserRouter>
