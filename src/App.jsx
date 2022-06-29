@@ -8,7 +8,6 @@ import ViewCustomer from './pages/ViewCustomer'
 
 function App() {
 
-
   return (
     <div>
       <BrowserRouter>
