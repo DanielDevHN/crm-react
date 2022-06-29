@@ -6,14 +6,6 @@
       "email": "daniel.reyes@unitec.edu",
       "telefono": "33303580",
       "notas": "El cliente es un buen programador.",
-      "id": 1
-    },
-    {
-      "nombre": "Daniel Reyes",
-      "empresa": "Google Inc.",
-      "email": "daniel.reyes@unitec.edu",
-      "telefono": "33303580",
-      "notas": "El cliente es un buen programador.",
       "id": 2
     },
     {
@@ -31,22 +23,6 @@
       "telefono": "33303580",
       "notas": "",
       "id": 4
-    },
-    {
-      "nombre": "Selvin Medina",
-      "empresa": "Farsiman",
-      "email": "selvinmedina0016@gmail.com",
-      "telefono": "98457465",
-      "notas": "El cliente es un consultor de programacion.",
-      "id": 5
-    },
-    {
-      "nombre": "Maria Alvarez",
-      "empresa": "Casa del Alfarerp",
-      "email": "maria@gmail.com",
-      "telefono": "33500080",
-      "notas": "",
-      "id": 6
     }
   ]
 }
